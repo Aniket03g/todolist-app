@@ -1,10 +1,12 @@
 class Task:
-    def __init__(self, title, completed=False):
+    def __init__(self, title, completed=False, bookmarked=False):
         self.title = title
         self.completed = completed
+        self.bookmarked = bookmarked
 
     def __repr__(self):
-        return f"[{'x' if self.completed else ' '}] {self.title}"
+        bookmark = '★' if self.bookmarked else ' '
+        return f"[{'x' if self.completed else ' '}] {bookmark} {self.title}"
 
 class TodoList:
     def __init__(self):
